@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">MYSW Camp</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link " href="/">Home</a>
+        <a class="nav-link" href="/campgrounds">Campgrounds</a>
+        <a class="nav-link" href="/campgrounds/new">New Camp</a>
+      </div>
+      <div class="navbar-nav ml-auto">
+        <% if(!currentUser) { %>
+          <a class="nav-link " href="/login">Login</a>
+          <a class="nav-link" href="/register">Register</a>
+
+          <% } else { %>
+            <form action="/logout" method="POST">
+              <button class="nav-link btn btn-link" style="display:inline; padding:0;">
+                Logout
+              </button>
+            </form>
+            <% } %>
+
+      </div>
+
+    </div>
+  </div>
+</nav>
