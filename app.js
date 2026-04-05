@@ -45,7 +45,8 @@ const mongoSanitize = require('express-mongo-sanitize');
 const multer = require("multer");
 const {storage} = require("./cloudinary");
 const upload = multer({storage})
-
+// PORT
+const port = process.env.PORT || 3000;
 const campground = require('./models/campground');
 const validateReview = (req,res,next) => {
     const {error} = reviewSchema.validate(req.body);
@@ -207,6 +208,9 @@ app.use((err,req,res,next)=> {
 
 
 // LAST CALL
-app.listen(3000,()=>{
-    console.log("Serving on port 3000")
-})
+// app.listen(3000,()=>{
+//     console.log("Serving on port 3000")
+// })
+app.listen(port, () => {
+  console.log(`Serving on port ${port}`);
+});
