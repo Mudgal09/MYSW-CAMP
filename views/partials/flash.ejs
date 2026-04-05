@@ -1,5 +1,5 @@
-<% if (locals.success && locals.success.length) { %>
-    <% locals.success.forEach(function(msg){ %>
+<% if (success && success.length) { %>
+    <% success.forEach(function(msg){ %>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             <%= msg %>
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
@@ -7,8 +7,8 @@
         <% }) %>
             <% } %>
 
-                <% if (locals.error && locals.error.length) { %>
-                    <% locals.error.forEach(function(msg){ %>
+                <% if (error && error.length) { %>
+                    <% error.forEach(function(msg){ %>
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <%= msg %>
                                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
